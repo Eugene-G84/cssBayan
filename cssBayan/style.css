@@ -18,6 +18,11 @@ body{
   width: 1.125em;
   height: 1.125em;
 }
+.accordion__open{
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 1s;
+}
 label{
   display: flex;
   justify-content: space-between;
@@ -29,22 +34,16 @@ label{
   background-color: #337AB7;
   transition: color .35s;
 }
-
 label:hover{
   color: #fff;
 }
 input{
   display: none;
 }
-img{
+.accordion__img{
   max-width: 100%;
-  height: 0;
-  align-self: center;
   object-fit: cover;
   vertical-align: top;
-}
-input:checked + label + img{
-  height: auto;
 }
 input:checked + label > span > .icon-arrow{
   display: none;
@@ -52,8 +51,6 @@ input:checked + label > span > .icon-arrow{
 input:checked + label > span > .icon-thumb{
   display: inline;
 }
-@media(min-width: 568px){
-  .container{
-    max-width: 55%;
-  }
+input:checked + label + .accordion__open{
+  max-height: 700px;
 }
