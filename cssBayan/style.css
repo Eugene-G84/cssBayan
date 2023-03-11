@@ -1,13 +1,21 @@
 body{
   margin: 0;
 }
+.accordion__title{
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #337AB7;
+}
 .container{
-  padding: 0 1.125em;
   margin: 0 auto;
+  padding: 0 1.125em;
 }
 .accordion__item{
   display: flex;
   flex-direction: column;
+}
+.accordion__item{
+  border-top: 1px solid #fff;
 }
 .icon-arrow{
   width: 1.125em;
@@ -19,6 +27,8 @@ body{
   height: 1.125em;
 }
 .accordion__open{
+  display: flex;
+  justify-content: center;
   overflow: hidden;
   max-height: 0;
   transition: max-height 1s;
@@ -30,9 +40,9 @@ label{
   padding: 1.125em;
   font-family: Verdana, sans-serif; 
   font-size: 1.125em;
+  transition: color .35s;
   color: #BFE2FF;
   background-color: #337AB7;
-  transition: color .35s;
 }
 label:hover{
   color: #fff;
@@ -41,8 +51,8 @@ input{
   display: none;
 }
 .accordion__img{
-  max-width: 100%;
-  object-fit: cover;
+  width: 100%;
+  object-fit: contain;
   vertical-align: top;
 }
 input:checked + label > span > .icon-arrow{
@@ -52,5 +62,31 @@ input:checked + label > span > .icon-thumb{
   display: inline;
 }
 input:checked + label + .accordion__open{
-  max-height: 700px;
+  max-height: 100em;
+}
+@media(min-width: 575.98px){
+  .container{
+    max-width: 540px;
+  }
+  .accordion__img{
+    width: 50%;
+    padding: 20px 0;
+  }
+}   
+@media(min-width: 767.98px){
+  .container{
+    max-width: 720px;
+  }
+  .accordion__img{
+    width: 40%;
+    padding: 20px 0;
+  }
+}  
+@media(min-width: 1023.98px){
+  .container{
+    max-width: 1024px;
+  }
+  .accordion__img{
+    width: 30%;
+  }
 }
