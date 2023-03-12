@@ -116,7 +116,7 @@ input:checked + label > span + .accordion__open{
   .accordion__item:hover input:not(:checked) + label{
     background-color: #7a9eec;
   }
-  .accordion__item:hover > input + label > span > .icon-arrow{
+  .accordion:hover input:not(:checked):hover + label > span > .icon-arrow{
     transform: rotate(360deg);
     transition: transform 1s;
   }
