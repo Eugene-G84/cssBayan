@@ -1,23 +1,24 @@
 body{
   margin: 0;
 }
+.container{
+  display: flex;
+  justify-content: center;
+  padding: 0 1.125em;
+  margin:0 auto;
+}
 .accordion__title{
   font-family: sans-serif;
   font-weight: 700;
   color: #337AB7;
 }
-.container{
-  margin: 0 auto;
-  padding: 0 1.125em;
-}
 .accordion__item{
   display: flex;
   flex-direction: column;
   transition: background-color 0.5s;
-  border-top: 0.0625em solid #fff;
 }
 .icon-arrow{
-  visibility: hidden;
+  display: none;
   width: 1.125em;
   height: 1.125em;
 }
@@ -27,6 +28,7 @@ body{
   height: 1.125em;
 }
 .accordion__open{
+  grid-column: span 2;
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -34,27 +36,22 @@ body{
   max-height: 0;
   transition: max-height 1s;
 }
-.accordion__open:active{
-  background-color: #777373;
-}
-:target{
-  max-height: 0;
-} 
 label{
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 95% 5%;
+  align-items: end;
   cursor: pointer;
   padding: 1.125em;
   font-family: Verdana, sans-serif; 
   font-size: 1.125em;
   transition: background-color .35s;
   box-shadow: 0 0.125em 0.25em #7a7a7a;
-  color: #a1a0a0;
-  background-color: #337AB7;
+  color: #000;
+  background-color: #c7cfe7;
 }
 input:checked + label{
   color: #fff;
-  background-color: #7a9eec;
+  background-color: #0112369c;
 }
 label:active{
   background-color: #92bbdf !important;
@@ -66,11 +63,12 @@ input{
   width: 100%;
   object-fit: contain;
   vertical-align: top;
+  padding: 1.25em 0;
 }
 input:checked + label > span > .icon-thumb{
   display: inline;
 }
-input:checked + label + .accordion__open{
+input:checked + label > span + .accordion__open{
   max-height: 100em;
 }
 @media(min-width: 575.98px){
@@ -78,8 +76,7 @@ input:checked + label + .accordion__open{
     max-width: 33.75em;
   }
   .accordion__img{
-    width: 50%;
-    padding: 1.25em 0;
+    width: 80%;
   }
 }   
 @media(min-width: 767.98px){
@@ -87,28 +84,30 @@ input:checked + label + .accordion__open{
     max-width: 45em;
   }
   .accordion__img{
-    width: 40%;
-    padding: 1.25em 0;
+    width: 65%;
   }
   .accordion__title {
-    font-size: 1.25em;
+    font-size: 1.5625em;
   }
 }  
 @media(min-width: 1023.98px){
   .container{
     max-width: 64em;
   }
-  .accordion__img{
-    width: 30%;
+  .accordion{
+    max-width: 50%;
   }
-  .accordion__title {
-    font-size: 1.5625em;
+  .accordion__title{
+    font-size: 2.1875em;
+  }
+  .accordion__img{
+    width: 55%;
   }
   .accordion:hover .icon-thumb{
     display: none;
   }
   .accordion:hover .icon-arrow{
-    visibility: visible;
+    display:inline-block;
   }
   .accordion:hover label{
     color: #fff;
