@@ -36,6 +36,9 @@ body{
 }
 .accordion__open:active{
   background-color: #777373;
+}
+:target{
+  max-height: 0;
 } 
 label{
   display: flex;
@@ -45,12 +48,16 @@ label{
   font-family: Verdana, sans-serif; 
   font-size: 1.125em;
   transition: background-color .35s;
-  box-shadow: 0 0.125em 0.25em #000;
-  color: #BFE2FF;
+  box-shadow: 0 0.125em 0.25em #7a7a7a;
+  color: #a1a0a0;
   background-color: #337AB7;
 }
-label:active{
+input:checked + label{
+  color: #fff;
   background-color: #7a9eec;
+}
+label:active{
+  background-color: #92bbdf !important;
 }
 input{
   display: none;
@@ -105,6 +112,9 @@ input:checked + label + .accordion__open{
   }
   .accordion:hover label{
     color: #fff;
+  }
+  .accordion__item:hover input:not(:checked) + label{
+    background-color: #7a9eec;
   }
   .accordion__item:hover > input + label > span > .icon-arrow{
     transform: rotate(360deg);
