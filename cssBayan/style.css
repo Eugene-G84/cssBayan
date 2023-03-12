@@ -1,5 +1,6 @@
 body{
   margin: 0;
+  cursor: url("./img/surprised-patrick-cursor.svg"),auto;
 }
 .container{
   display: flex;
@@ -32,7 +33,7 @@ body{
   display: flex;
   justify-content: center;
   overflow: hidden;
-  cursor: pointer;
+  cursor: url("./img/surprised-patrick-pointer.svg"),auto;
   max-height: 0;
   transition: max-height 1s;
 }
@@ -40,7 +41,7 @@ label{
   display: grid;
   grid-template-columns: 95% 5%;
   align-items: end;
-  cursor: pointer;
+  cursor: url("./img/surprised-patrick-pointer.svg"),auto;
   padding: 1.125em;
   font-family: Verdana, sans-serif; 
   font-size: 1.125em;
