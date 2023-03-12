@@ -1,0 +1,127 @@
+body{
+  margin: 0;
+  cursor: url("./img/surprised-patrick-cursor.svg"),auto;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  padding: 0 1.125em;
+  margin:0 auto;
+}
+.accordion__title{
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #337AB7;
+}
+.accordion__item{
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.5s;
+}
+.icon-arrow{
+  display: none;
+  width: 1.125em;
+  height: 1.125em;
+}
+.icon-thumb{
+  display: none;
+  width: 1.125em;
+  height: 1.125em;
+}
+.accordion__open{
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  cursor: url("./img/surprised-patrick-pointer.svg"),auto;
+  max-height: 0;
+  transition: max-height 1s;
+}
+label{
+  display: grid;
+  grid-template-columns: 95% 5%;
+  align-items: end;
+  cursor: url("./img/surprised-patrick-pointer.svg"),auto;
+  padding: 1.125em;
+  font-family: Verdana, sans-serif; 
+  font-size: 1.125em;
+  transition: background-color .35s;
+  box-shadow: 0 0.125em 0.25em #7a7a7a;
+  color: #000;
+  background-color: #c7cfe7;
+}
+input:checked + label{
+  color: #fff;
+  background-color: #0112369c;
+}
+label:active{
+  background-color: #92bbdf !important;
+}
+input{
+  display: none;
+}
+.accordion__img{
+  width: 100%;
+  object-fit: contain;
+  vertical-align: top;
+  padding: 1.25em 0;
+}
+input:checked + label > span > .icon-thumb{
+  display: inline;
+}
+input:checked + label > span + .accordion__open{
+  max-height: 100em;
+}
+@media(min-width: 575.98px){
+  .container{
+    max-width: 33.75em;
+  }
+  .accordion__img{
+    width: 80%;
+  }
+}   
+@media(min-width: 767.98px){
+  .container{
+    max-width: 45em;
+  }
+  .accordion__img{
+    width: 65%;
+  }
+  .accordion__title {
+    font-size: 1.5625em;
+  }
+}  
+@media(min-width: 1023.98px){
+  .container{
+    max-width: 64em;
+  }
+  .accordion{
+    max-width: 50%;
+  }
+  .accordion__title{
+    font-size: 2.1875em;
+  }
+  .accordion__img{
+    width: 55%;
+  }
+  .accordion:hover .icon-thumb{
+    display: none;
+  }
+  .accordion:hover .icon-arrow{
+    display:inline-block;
+  }
+  .accordion:hover label{
+    color: #fff;
+  }
+  .accordion__item:hover input:not(:checked) + label{
+    background-color: #7a9eec;
+  }
+  .accordion:hover input:not(:checked):hover + label > span > .icon-arrow{
+    transform: rotate(360deg);
+    transition: transform 1s;
+  }
+  .accordion__item:hover .accordion__open{
+    max-height: 100em;
+    transition: max-height 4s;
+  }
+}  
